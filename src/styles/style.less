@@ -1,0 +1,39 @@
+@sidebar-width : 300px;
+@font-size : 20px;
+@color-grey : #5c646d;
+@color-active-green : #95f8c1;
+@color-white: #fff;
+@color-black: #333;
+
+
+.sidebar{
+    height: 100vh;
+    width: @sidebar-width;
+    background: @color-grey;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: @font-size;
+    ul {
+        list-style: none;
+        padding: 0;
+        li{
+            padding: 28px;
+            margin: 6% 3%;
+            background: @color-white;
+        }
+    }
+}
+
+.sidebar::-webkit-scrollbar{
+    background: @color-black;
+    width: 1em;
+    outline: solid 2px @color-black;
+}
+.sidebar::-webkit-scrollbar-thumb{
+    background: @color-white;
+    width: 1em;
+}
+.item-view{
+    padding: 40px;
+    font-size: @font-size;
+}
