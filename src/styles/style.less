@@ -5,13 +5,18 @@
 @color-white: #fff;
 @color-black: #333;
 
-
-.sidebar{
+//mixins
+.scrolling-element{
     height: 100vh;
-    width: @sidebar-width;
-    background: @color-grey;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.App{height: 100vh;overflow: hidden;}
+.sidebar {
+    .scrolling-element;
+    width: @sidebar-width;
+    background: @color-grey;
     font-size: @font-size;
     ul {
         list-style: none;
@@ -20,20 +25,38 @@
             padding: 28px;
             margin: 6% 3%;
             background: @color-white;
+            cursor: pointer;
+            &.active{background: @color-active-green;}
         }
     }
 }
 
-.sidebar::-webkit-scrollbar{
+.sidebar::-webkit-scrollbar {
     background: @color-black;
     width: 1em;
     outline: solid 2px @color-black;
 }
-.sidebar::-webkit-scrollbar-thumb{
+
+.sidebar::-webkit-scrollbar-thumb {
     background: @color-white;
     width: 1em;
+    border: solid 4px @color-black;
 }
-.item-view{
+
+.article-view {
     padding: 40px;
     font-size: @font-size;
+    width: calc(~'100% - 300px');
+    text-align: left;
+    .scrolling-element;
+
+    input{
+        border: none;
+    }
+    input:focus{
+        border: initial;
+    }
+    img{
+        padding: 20px 0;
+    }
 }

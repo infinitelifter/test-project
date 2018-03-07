@@ -1,9 +1,18 @@
-.sidebar {
+.scrolling-element {
   height: 100vh;
-  width: 300px;
-  background: #5c646d;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+.App {
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 300px;
+  background: #5c646d;
   font-size: 20px;
 }
 .sidebar ul {
@@ -14,6 +23,10 @@
   padding: 28px;
   margin: 6% 3%;
   background: #fff;
+  cursor: pointer;
+}
+.sidebar ul li.active {
+  background: #95f8c1;
 }
 .sidebar::-webkit-scrollbar {
   background: #333;
@@ -23,8 +36,23 @@
 .sidebar::-webkit-scrollbar-thumb {
   background: #fff;
   width: 1em;
+  border: solid 4px #333;
 }
-.item-view {
+.article-view {
   padding: 40px;
   font-size: 20px;
+  width: calc(100% - 300px);
+  text-align: left;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.article-view input {
+  border: none;
+}
+.article-view input:focus {
+  border: initial;
+}
+.article-view img {
+  padding: 20px 0;
 }
